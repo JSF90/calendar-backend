@@ -4,6 +4,7 @@ const cors = require('cors');
 const {dbConnection} = require('./db/config');  // configuracion de conexion a db
 // importacion de rutas
 const authRoutes = require('./routes/auth');
+const eventsRoutes = require('./routes/events');
 
 
 // Crear el servidor de express
@@ -20,13 +21,14 @@ app.use(express.json());
 
 // Rutas
 app.use('/api/auth', authRoutes);
+app.use('/api/events', eventsRoutes);
 
 // Escuchar peticiones
 app.listen(process.env.PORT, () => {
     console.log(`Server running on port ${process.env.PORT}`)
 });
-
-
+ 
+ 
 
 
 // Notas: en package.json configure dos comando npm start para produccion

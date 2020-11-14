@@ -6,7 +6,7 @@ const {isAuth} = require('../middlewares/is-auth');
 
 const router = Router();
 
-router.post(
+router.post( 
     '/register',
     [ // midlewares
         check('name', 'El nombre es obligatorio').not().isEmpty(),
